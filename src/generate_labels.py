@@ -78,11 +78,6 @@ def generate_labels(volume_json_path, output_path, growth_threshold=0.2):
 
       print(f"{key}: growth={growth:.3f}, label={label}, Δt={delta_days} days")
 
-    # Remove patients with no valid transitions
-    if len(labels[patient_id]) == 0:
-      print(f"Removing {patient_id} (no valid transitions)")
-      del labels[patient_id]
-
   # Save output
   output_file = os.path.join(output_path, "labels.json")
 
